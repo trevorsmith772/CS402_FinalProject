@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">ClosetBuddy</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">Closet Buddy</string>
+    <string name="title_outfits">Outifts</string>
+    <string name="title_addItem">Add Item</string>
+    <string name="title_closet">Closet</string>
 </resources>
