@@ -1,11 +1,9 @@
 <resources>
-    <string name="app_name">Closet Buddy</string>
-    <string name="title_outfits">Outfits</string>
-    <string name="title_addItem">Add Item</string>
-    <string name="title_closet">Closet</string>
+    <string name="app_name">MyDrobe</string>
     <string name="title_home">Home</string>
     <string name="title_today">Today</string>
-    <string name="title_collection">Collection</string>
+    <string name="title_collection">Closet</string>
+    <string name="title_outfits">Outfits</string>
     <string name="search">Search</string>
     <string name="more">More</string>
     <string name="sort">Sort</string>
