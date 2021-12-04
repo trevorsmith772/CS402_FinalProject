@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyDrobe</string>
+    <string name="app_name">ClosetBuddy</string>
     <string name="title_home">Home</string>
     <string name="title_today">Today</string>
     <string name="title_collection">Closet</string>
