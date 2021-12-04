@@ -71,6 +71,7 @@ class HomeFragment : Fragment() {
             }
         }.attach()
         // homeFab camera FAB
+        /*
         binding.homeBottomAppbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.search -> {
@@ -83,9 +84,9 @@ class HomeFragment : Fragment() {
                 }
                 else -> false
             }
-        }
+        }*/
 
-        setupBottomSheet()
+        //setupBottomSheet()
 
         binding.homeFab.setOnClickListener {
             (activity as MainActivity).openDetails(null)
@@ -108,7 +109,7 @@ class HomeFragment : Fragment() {
             1 -> (childFragmentManager.findFragmentByTag("f1") as CollectionFragment).sortItems()
         }
     }
-
+    /*
     private fun setupBottomSheet() {
         val bottomSheet = BottomSheetDialog(safeContext).apply {
             setContentView(R.layout.bottom_sheet_main)
@@ -128,7 +129,7 @@ class HomeFragment : Fragment() {
             bottomSheet.dismiss()
         }
         binding.homeBottomAppbar.setNavigationOnClickListener { bottomSheet.show() }
-    }
+    }*/
 
     private fun getSeasonIcon(season: Season): Int {
         return when (season) {
