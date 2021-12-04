@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyDrobe</string>
+    <string name="app_name">ClosetBuddy</string>
     <string name="title_home">Menu principal</string>
     <string name="title_today">Hoy</string>
     <string name="title_collection">Colección</string>
