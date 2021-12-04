@@ -20,10 +20,10 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep public class com.axiel7.mydrobe.models* {
+-keep public class com.example.closetbuddy.models* {
   public void set*(***);
   public *** get*();
   public protected private *;
 }
 
--keepclassmembers enum com.axiel7.mydrobe.models** { *; }
+-keepclassmembers enum com.example.closetbuddy.models** { *; }
