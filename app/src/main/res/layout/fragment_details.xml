@@ -104,7 +104,7 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.chip.ChipGroup
+                <!--<com.google.android.material.chip.ChipGroup
                     android:id="@+id/season_chip_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                         app:chipIcon="@drawable/ic_fall_24"
                         app:chipIconEnabled="true"/>
 
-                </com.google.android.material.chip.ChipGroup>
+                </com.google.android.material.chip.ChipGroup>-->
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/color_chip_group"
