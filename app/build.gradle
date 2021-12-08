@@ -80,6 +80,15 @@ dependencies {
     kapt 'androidx.room:room-compiler:2.3.0'
     implementation 'com.google.code.gson:gson:2.8.6'
 
+    //Added for M1 chip support
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+    testImplementation "android.arch.persistence.room:testing:1.1.1"
+    implementation "android.arch.persistence.room:rxjava2:1.1.1"
+    implementation "androidx.room:room-runtime:2.4.0-alpha03"
+    annotationProcessor "androidx.room:room-compiler:2.4.0-alpha03"
+    kapt 'androidx.room:room-compiler:2.4.0-alpha03'
+
     //Color picker
     implementation 'com.github.dhaval2404:colorpicker:2.0'
 
