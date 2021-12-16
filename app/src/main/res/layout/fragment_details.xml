@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sheet_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,13 +19,13 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="24dp"
-            android:scaleType="fitCenter"
             android:alpha="0.5"
+            android:scaleType="fitCenter"
             android:src="@drawable/ic_drag_pill_24"
-            app:tint="?attr/colorOnBackground"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorOnBackground" />
 
         <Button
             android:id="@+id/cancel_button"
@@ -35,6 +36,23 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/upload"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="top"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/apply_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/AppShapeAppearance.SmallComponent"
+            app:srcCompat="@drawable/ic_baseline_file_upload_24"
+            app:strokeColor="@color/stroke_color"
+            app:strokeWidth="1dp" />
 
         <Button
             android:id="@+id/apply_button"
@@ -80,6 +98,8 @@
                     app:strokeWidth="1dp"
                     app:srcCompat="@drawable/ic_add_image_24" />
 
+
+
             </FrameLayout>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -104,7 +124,8 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!--<com.google.android.material.chip.ChipGroup
+
+                <com.google.android.material.chip.ChipGroup
                     android:id="@+id/season_chip_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -115,8 +136,8 @@
                         style="@style/Widget.App.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/winter"
-                        app:chipIcon="@drawable/ic_winter_24"
+                        android:text="@string/outerwear"
+                        app:chipIcon="@drawable/ic_outerwear_24"
                         app:chipIconEnabled="true" />
 
                     <com.google.android.material.chip.Chip
@@ -124,8 +145,8 @@
                         style="@style/Widget.App.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/spring"
-                        app:chipIcon="@drawable/ic_spring_24"
+                        android:text="@string/bottoms"
+                        app:chipIcon="@drawable/ic_bottoms_24"
                         app:chipIconEnabled="true" />
 
                     <com.google.android.material.chip.Chip
@@ -133,8 +154,8 @@
                         style="@style/Widget.App.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/summer"
-                        app:chipIcon="@drawable/ic_summer_24"
+                        android:text="@string/footwear"
+                        app:chipIcon="@drawable/ic_footwear_24"
                         app:chipIconEnabled="true" />
 
                     <com.google.android.material.chip.Chip
@@ -142,11 +163,11 @@
                         style="@style/Widget.App.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/fall"
-                        app:chipIcon="@drawable/ic_fall_24"
+                        android:text="@string/tops"
+                        app:chipIcon="@drawable/ic_tops_24"
                         app:chipIconEnabled="true"/>
 
-                </com.google.android.material.chip.ChipGroup>-->
+                </com.google.android.material.chip.ChipGroup>
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/color_chip_group"
@@ -165,6 +186,8 @@
                         app:chipIcon="@drawable/ic_add_24"/>
 
                 </com.google.android.material.chip.ChipGroup>
+
+
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

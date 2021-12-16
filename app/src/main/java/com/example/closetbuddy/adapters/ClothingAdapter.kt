@@ -65,21 +65,21 @@ class ClothingAdapter(private val context: Context,
         }
 
         // Season Icon
-        holder.itemBinding.winterIcon.visibility = View.GONE
-        holder.itemBinding.springIcon.visibility = View.GONE
-        holder.itemBinding.summerIcon.visibility = View.GONE
-        holder.itemBinding.fallIcon.visibility = View.GONE
+        holder.itemBinding.outerwearIcon.visibility = View.GONE
+        holder.itemBinding.bottomsIcon.visibility = View.GONE
+        holder.itemBinding.footwearIcon.visibility = View.GONE// footwear but had bottoms
+        holder.itemBinding.topsIcon.visibility = View.GONE
         for (season in item.seasons) {
             when (season) {
-                Season.WINTER -> holder.itemBinding.winterIcon.visibility = View.VISIBLE
-                Season.SPRING -> holder.itemBinding.springIcon.visibility = View.VISIBLE
-                Season.SUMMER -> holder.itemBinding.summerIcon.visibility = View.VISIBLE
-                Season.FALL -> holder.itemBinding.fallIcon.visibility = View.VISIBLE
+                Season.WINTER -> holder.itemBinding.outerwearIcon.visibility = View.VISIBLE
+                Season.SPRING -> holder.itemBinding.bottomsIcon.visibility = View.VISIBLE
+                Season.SUMMER -> holder.itemBinding.footwearIcon.visibility = View.VISIBLE
+                Season.FALL -> holder.itemBinding.topsIcon.visibility = View.VISIBLE
                 Season.NONE -> {
-                    holder.itemBinding.winterIcon.visibility = View.GONE
-                    holder.itemBinding.springIcon.visibility = View.GONE
-                    holder.itemBinding.summerIcon.visibility = View.GONE
-                    holder.itemBinding.fallIcon.visibility = View.GONE
+                    holder.itemBinding.outerwearIcon.visibility = View.GONE
+                    holder.itemBinding.bottomsIcon.visibility = View.GONE
+                    holder.itemBinding.footwearIcon.visibility = View.GONE
+                    holder.itemBinding.topsIcon.visibility = View.GONE
                 }
             }
         }

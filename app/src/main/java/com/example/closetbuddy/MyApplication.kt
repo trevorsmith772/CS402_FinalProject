@@ -5,7 +5,7 @@ import coil.ImageLoader
 import coil.ImageLoaderFactory
 import coil.util.CoilUtils
 import com.example.closetbuddy.repository.ClothesRepository
-import com.example.closetbuddy.room.DrobeDatabase
+import com.example.closetbuddy.room.CBDatabase
 import com.example.closetbuddy.utils.SharedPrefsHelpers
 import okhttp3.OkHttpClient
 
@@ -14,8 +14,8 @@ class MyApplication : Application(), ImageLoaderFactory {
     override fun onCreate() {
         super.onCreate()
         SharedPrefsHelpers.init(applicationContext)
-        drobeDb = DrobeDatabase.getInstance(applicationContext)
-        clothesRepository = ClothesRepository(drobeDb.clothesDao())
+        CBDb = CBDatabase.getInstance(applicationContext)
+        clothesRepository = ClothesRepository(CBDb.clothesDao())
     }
 
     override fun newImageLoader(): ImageLoader {
@@ -31,7 +31,7 @@ class MyApplication : Application(), ImageLoaderFactory {
     }
 
     companion object {
-        lateinit var drobeDb: DrobeDatabase
+        lateinit var CBDb: CBDatabase
         lateinit var clothesRepository: ClothesRepository
     }
 }

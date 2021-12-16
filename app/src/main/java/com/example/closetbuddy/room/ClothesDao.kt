@@ -19,7 +19,7 @@ interface ClothesDao {
     @Query("SELECT * FROM clothing WHERE LOWER(name) LIKE LOWER(:query)")
     fun searchClothes(query: String): Flow<List<Clothing>>
 
-    @Query("SELECT * FROM clothing WHERE seasons LIKE :season")
+    @Query("SELECT * FROM clothing WHERE (seasons LIKE :season and seasons NOT LIKE :season) ORDER BY random() LIMIT 4")
     fun getClothesBySeason(season: String): Flow<List<Clothing>>
 
     @Query("SELECT * FROM clothing WHERE seasons LIKE :season ORDER BY CASE WHEN :order = 'id' THEN id END DESC, CASE WHEN :order = 'name' THEN name END")
