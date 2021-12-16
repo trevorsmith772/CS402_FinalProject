@@ -9,19 +9,19 @@ import com.example.closetbuddy.models.Clothing
 
 @TypeConverters(value = [com.example.closetbuddy.room.TypeConverters::class])
 @Database(entities = [Clothing::class], version = 1)
-abstract class DrobeDatabase : RoomDatabase() {
+abstract class CBDatabase : RoomDatabase() {
 
     abstract fun clothesDao(): ClothesDao
 
     companion object {
         @Volatile
-        private var INSTANCE: DrobeDatabase? = null
+        private var INSTANCE: CBDatabase? = null
 
-        fun getInstance(context: Context): DrobeDatabase {
+        fun getInstance(context: Context): CBDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    DrobeDatabase::class.java,
+                    CBDatabase::class.java,
                     "DrobeDatabase"
                 ).allowMainThreadQueries()
                     .build()

@@ -47,36 +47,36 @@
             app:layout_constraintTop_toBottomOf="@+id/name">
 
             <ImageView
-                android:id="@+id/winter_icon"
+                android:id="@+id/outerwear_icon"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="8dp"
                 android:visibility="gone"
-                android:src="@drawable/ic_winter_24" />
+                android:src="@drawable/ic_outerwear_24" />
 
             <ImageView
-                android:id="@+id/spring_icon"
+                android:id="@+id/bottoms_icon"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="8dp"
                 android:visibility="gone"
-                android:src="@drawable/ic_spring_24" />
+                android:src="@drawable/ic_bottoms_24" />
 
             <ImageView
-                android:id="@+id/summer_icon"
+                android:id="@+id/footwear_icon"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="8dp"
                 android:visibility="gone"
-                android:src="@drawable/ic_summer_24" />
+                android:src="@drawable/ic_footwear_24" />
 
             <ImageView
-                android:id="@+id/fall_icon"
+                android:id="@+id/tops_icon"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="8dp"
                 android:visibility="gone"
-                android:src="@drawable/ic_fall_24" />
+                android:src="@drawable/ic_tops_24" />
 
         </LinearLayout>
 

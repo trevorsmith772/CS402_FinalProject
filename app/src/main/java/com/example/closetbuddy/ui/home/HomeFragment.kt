@@ -133,11 +133,11 @@ class HomeFragment : Fragment() {
 
     private fun getSeasonIcon(season: Season): Int {
         return when (season) {
-            Season.SUMMER -> R.drawable.ic_summer_24
-            Season.SPRING -> R.drawable.ic_spring_24
-            Season.FALL -> R.drawable.ic_fall_24
-            Season.WINTER -> R.drawable.ic_winter_24
-            else -> R.drawable.ic_spring_24
+            Season.SUMMER -> R.drawable.ic_footwear_24
+            Season.SPRING -> R.drawable.ic_bottoms_24
+            Season.FALL -> R.drawable.ic_tops_24
+            Season.WINTER -> R.drawable.ic_outerwear_24
+            else -> R.drawable.ic_tops_24
         }
     }
 

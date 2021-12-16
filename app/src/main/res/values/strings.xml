@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ClosetBuddy</string>
     <string name="title_home">Home</string>
-    <string name="title_today">Today</string>
+    <string name="title_today">Outfits</string>
     <string name="title_collection">Closet</string>
     <string name="title_outfits">Outfits</string>
     <string name="search">Search</string>
@@ -11,11 +11,12 @@
     <string name="apply">Apply</string>
     <string name="save">Save</string>
     <string name="name">Name</string>
-    <string name="winter">Winter</string>
-    <string name="spring">Spring</string>
-    <string name="summer">Summer</string>
-    <string name="fall">Fall</string>
+    <string name="outerwear">Outerwear</string>
+    <string name="bottoms">Bottoms</string>
+    <string name="footwear">Footwear</string>
+    <string name="tops">Tops</string>
     <string name="add_color">Add color</string>
+    <string name="add_type">Add type</string>
     <string name="delete">Delete</string>
     <string name="view_image">View</string>
     <string name="replace">Replace</string>

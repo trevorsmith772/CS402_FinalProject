@@ -119,6 +119,7 @@ class DetailsFragment : BottomSheetDialogFragment() {
                 .show()
         }
 
+
         clothingViewModel.selectedItem.observe(viewLifecycleOwner, {
             binding.nameTextEdit.setText(it?.name)
             if (it != null) {
@@ -134,7 +135,7 @@ class DetailsFragment : BottomSheetDialogFragment() {
                         error(R.drawable.ic_add_image_24)
                     }
                 }
-                /*for (season in it.seasons) {
+                for (season in it.seasons) {
                     when (season) {
                         Season.WINTER -> binding.seasonChipGroup.check(R.id.winter_chip)
                         Season.SPRING -> binding.seasonChipGroup.check(R.id.spring_chip)
@@ -142,11 +143,12 @@ class DetailsFragment : BottomSheetDialogFragment() {
                         Season.FALL -> binding.seasonChipGroup.check(R.id.fall_chip)
                         Season.NONE -> binding.seasonChipGroup.clearCheck()
                     }
-                }*/
+                }
                 binding.colorChipGroup.removeViews(0, binding.colorChipGroup.childCount-1)
                 for (color in it.colors) {
                     addChipColor(color)
                 }
+
             }
         })
     }
@@ -202,8 +204,8 @@ class DetailsFragment : BottomSheetDialogFragment() {
     private fun saveItem() {
         val name = binding.nameTextEdit.text.toString()
         val seasons = mutableListOf<Season>()
-        //val checkedSeasons = binding.seasonChipGroup.checkedChipIds
-        /*if (checkedSeasons.isEmpty()) {
+        val checkedSeasons = binding.seasonChipGroup.checkedChipIds
+        if (checkedSeasons.isEmpty()) {
             seasons.add(Season.NONE)
         }
         else {
@@ -215,7 +217,7 @@ class DetailsFragment : BottomSheetDialogFragment() {
                     R.id.fall_chip -> seasons.add(Season.FALL)
                 }
             }
-        }*/
+        }
         clothingViewModel.selectedItem.value?.name = name
         clothingViewModel.selectedItem.value?.seasons = seasons
         clothingViewModel.selectedItem.value?.colors?.removeAll(colorsToRemove)
@@ -255,6 +257,7 @@ class DetailsFragment : BottomSheetDialogFragment() {
         }
         binding.colorChipGroup.addView(chip, 0)
     }
+
 
     @SuppressLint("RestrictedApi")
     private fun showImageMenu(v: View) {
