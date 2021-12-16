@@ -22,11 +22,9 @@ class TodayFragment : Fragment() {
     private lateinit var adapter: ClothingAdapter
     private lateinit var todayViewModel: TodayViewModel
     private lateinit var safeContext: Context
-    private val sharedPrefs = SharedPrefsHelpers.instance!!
     private var _binding: FragmentTodayBinding? = null
     private val binding get() = _binding!!
     private var sort: String = "id"
-    private var sortId: Int = 0
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -60,7 +58,7 @@ class TodayFragment : Fragment() {
             }
         })
 
-        updateSort(sortId)
+       // updateSort(sortId)
         todayViewModel.setOrder(sort)
 
         todayViewModel.clothes.observe(viewLifecycleOwner, {
@@ -68,39 +66,7 @@ class TodayFragment : Fragment() {
         })
     }
 
-    fun sortItems() {
-        val items = arrayOf(getString(R.string.recently_added), getString(R.string.name))
-        MaterialAlertDialogBuilder(safeContext)
-            .setTitle(getString(R.string.sort_by))
-            .setNeutralButton(getString(R.string.cancel)) { _, _ -> }
-            .setPositiveButton(getString(R.string.ok)) { _, _ ->
-                todayViewModel.setOrder(sort)
-            }
-            .setSingleChoiceItems(items, sortId) { _, which ->
-                updateSort(which)
-            }
-            .show()
-    }
 
-    private fun updateSort(id: Int) {
-        when (id) {
-            0 -> {
-                sort = "id"
-                sortId = 0
-                sharedPrefs.saveInt("todaySort", 0)
-            }
-            1 -> {
-                sort = "name"
-                sortId = 1
-                sharedPrefs.saveInt("todaySort", 1)
-            }
-            else -> {
-                sort = "id"
-                sortId = 0
-                sharedPrefs.saveInt("todaySort", 0)
-            }
-        }
-    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

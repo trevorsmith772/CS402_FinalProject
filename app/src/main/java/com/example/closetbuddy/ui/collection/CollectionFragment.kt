@@ -22,15 +22,13 @@ class CollectionFragment : Fragment() {
     private lateinit var adapter: ClothingAdapter
     private lateinit var collectionViewModel: CollectionViewModel
     private lateinit var safeContext: Context
-    private val sharedPrefs = SharedPrefsHelpers.instance!!
     private var _binding: FragmentCollectionBinding? = null
     private val binding get() = _binding!!
     private var sort: String = "id"
-    private var sortId: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sortId = sharedPrefs.getInt("collectionSort", 0)
+
     }
 
     override fun onCreateView(
@@ -67,7 +65,7 @@ class CollectionFragment : Fragment() {
             }
         })
 
-        updateSort(sortId)
+
         collectionViewModel.setOrder(sort)
 
         collectionViewModel.clothes.observe(viewLifecycleOwner, {
@@ -76,39 +74,7 @@ class CollectionFragment : Fragment() {
 
     }
 
-    fun sortItems() {
-        val items = arrayOf(getString(R.string.recently_added), getString(R.string.name))
-        MaterialAlertDialogBuilder(safeContext)
-            .setTitle(getString(R.string.sort_by))
-            .setNeutralButton(getString(R.string.cancel)) { _, _ -> }
-            .setPositiveButton(getString(R.string.ok)) { _, _ ->
-                collectionViewModel.setOrder(sort)
-            }
-            .setSingleChoiceItems(items, sortId) { _, which ->
-                updateSort(which)
-            }
-            .show()
-    }
 
-    private fun updateSort(id: Int) {
-        when (id) {
-            0 -> {
-                sort = "id"
-                sortId = 0
-                sharedPrefs.saveInt("collectionSort", 0)
-            }
-            1 -> {
-                sort = "name"
-                sortId = 1
-                sharedPrefs.saveInt("collectionSort", 1)
-            }
-            else -> {
-                sort = "id"
-                sortId = 0
-                sharedPrefs.saveInt("collectionSort", 0)
-            }
-        }
-    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
