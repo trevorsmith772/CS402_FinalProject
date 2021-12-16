@@ -22,7 +22,7 @@ abstract class CBDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     CBDatabase::class.java,
-                    "DrobeDatabase"
+                    "CBDatabase"
                 ).allowMainThreadQueries()
                     .build()
                 INSTANCE = instance
