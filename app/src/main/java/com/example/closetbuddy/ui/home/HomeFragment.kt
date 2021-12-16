@@ -70,23 +70,7 @@ class HomeFragment : Fragment() {
                 }
             }
         }.attach()
-        // homeFab camera FAB
-        /*
-        binding.homeBottomAppbar.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.search -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
-                    true
-                }
-                R.id.sort -> {
-                    openSortOptions()
-                    true
-                }
-                else -> false
-            }
-        }*/
 
-        //setupBottomSheet()
 
         binding.homeFab.setOnClickListener {
             (activity as MainActivity).openDetails(null)
@@ -103,43 +87,6 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
-    private fun openSortOptions() {
-        when (binding.homeViewPager.currentItem) {
-            0 -> (childFragmentManager.findFragmentByTag("f0") as TodayFragment).sortItems()
-            1 -> (childFragmentManager.findFragmentByTag("f1") as CollectionFragment).sortItems()
-        }
-    }
-    /*
-    private fun setupBottomSheet() {
-        val bottomSheet = BottomSheetDialog(safeContext).apply {
-            setContentView(R.layout.bottom_sheet_main)
-        }
-        val share = bottomSheet.findViewById<TextView>(R.id.action_share)
-        share?.setOnClickListener {
-            ShareCompat.IntentBuilder(safeContext)
-                    .setType("text/plain")
-                    .setChooserTitle("")
-                    .setText("URL")
-                    .startChooser()
-            bottomSheet.dismiss()
-        }
-        val settings = bottomSheet.findViewById<TextView>(R.id.action_settings)
-        settings?.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
-            bottomSheet.dismiss()
-        }
-        binding.homeBottomAppbar.setNavigationOnClickListener { bottomSheet.show() }
-    }*/
-
-    private fun getSeasonIcon(season: Season): Int {
-        return when (season) {
-            Season.SUMMER -> R.drawable.ic_footwear_24
-            Season.SPRING -> R.drawable.ic_bottoms_24
-            Season.FALL -> R.drawable.ic_tops_24
-            Season.WINTER -> R.drawable.ic_outerwear_24
-            else -> R.drawable.ic_tops_24
-        }
-    }
 
     fun hideFab() {
         binding.homeFab.hide()
