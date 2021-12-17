@@ -64,10 +64,10 @@ class ClothingAdapter(private val context: Context,
             }
         }
 
-        // Season Icon
+
         holder.itemBinding.outerwearIcon.visibility = View.GONE
         holder.itemBinding.bottomsIcon.visibility = View.GONE
-        holder.itemBinding.footwearIcon.visibility = View.GONE// footwear but had bottoms
+        holder.itemBinding.footwearIcon.visibility = View.GONE
         holder.itemBinding.topsIcon.visibility = View.GONE
         for (season in item.seasons) {
             when (season) {
