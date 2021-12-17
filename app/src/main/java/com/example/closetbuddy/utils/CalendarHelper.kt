@@ -25,13 +25,4 @@ object CalendarHelper {
         }
     }
 
-    fun getSeasonName(season: Season) : Int {
-        return when (season) {
-            Season.SUMMER -> R.string.footwear
-            Season.SPRING -> R.string.bottoms
-            Season.FALL -> R.string.tops
-            Season.WINTER -> R.string.outerwear
-            else -> R.string.bottoms
-        }
-    }
 }
